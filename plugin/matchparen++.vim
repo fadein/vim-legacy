@@ -3,10 +3,18 @@
 "                line containing matching paren in status line
 " Original Author:  Bram Moolenaar <Bram@vim.org>
 " Maintainer:    Erik Falor <ewfalor@gmail.com>
-" Last Change:   2008 Mar 19
-" Version:       1.0.1
+" Last Change:   2018 Jul 08
+" Version:       1.0.3
 "
 " Changes {{{
+" 1.0.3 2018-07-08
+"   Ingo Karkat pointed out a bug brought about by Vim 8.1.0112:
+"     "Recent Vim versions have tightened the accepted arguments for
+"     searchpair[pos]()
+"
+"     The fix (also taken from the latest matchparen.vim) is easy: Pass a
+"     String-type "0" instead of the number 0 in s_skip"
+"
 " 1.0.1 2008-03-19
 "   Catch exception when searchpairpos doesn't accept a timeout argument;
 "   Use old flavor of searchpairpos() instead.
@@ -145,7 +153,7 @@ function! s:Highlight_Matching_Pair() "{{{
 	" When not in a string or comment ignore matches inside them.
 	let s_skip ='synIDattr(synID(line("."), col("."), 0), "name") ' .
 				\ '=~?  "string\\|character\\|singlequote\\|comment"'
-	execute 'if' s_skip '| let s_skip = 0 | endif'
+	execute 'if' s_skip '| let s_skip = "0" | endif'
 
 	" Borrowed from patch 7.1.269
 	" Limit the search time to 500 msec to avoid a hang on very long lines.
