@@ -61,6 +61,16 @@ function! <SID>ToggleScratchWin() "{{{
 	endif
 endfunction "}}}
 
+function! <SID>ForceOpenScratchWin() "{{{
+  call s:OpenScratchWin()
+endfunction "}}}
+
+function! <SID>ForceCloseScratchWin() "{{{
+  call s:CloseScratchWin()
+endfunction "}}}
+
 if !exists(":Scratch")
 	command! -nargs=0 Scratch call <SID>ToggleScratchWin()
+	command! -nargs=0 ScratchO call <SID>ForceOpenScratchWin()
+	command! -nargs=0 ScratchC call <SID>ForceCloseScratchWin()
 endif
