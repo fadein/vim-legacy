@@ -9,6 +9,6 @@ function! <SID>TrimF()
     call winrestview(l:save_view)
 endfunction
 
-command! -nargs=0 Trim   :call <SID>TrimF()
+command! -bar -nargs=0 Trim   :call <SID>TrimF()
 
 " vim:filetype=vim sw=4 foldmethod=marker tw=78 expandtab:

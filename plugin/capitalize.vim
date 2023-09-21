@@ -13,6 +13,6 @@ function! <SID>CapitalizeF(bang, line1, line2)
     call winrestview(l:save_view)
 endfunction
 
-command! -nargs=0 -bang -range Capitalize   :call <SID>CapitalizeF("<bang>", <line1>, <line2>)
+command! -nargs=0 -bar -bang -range Capitalize   :call <SID>CapitalizeF("<bang>", <line1>, <line2>)
 
 " vim:filetype=vim sw=4 foldmethod=marker tw=78 expandtab:
