@@ -27,7 +27,7 @@
 "               selection and stores in b:md5sum
 "               <Leader>sh - displays SHA1 checksum for entire file or visual
 "               selection and stores in b:sha1sum
-" Changes: 
+" Changes:
 " 0.2 2008-06-26
 "   Checksum can be compared to previously calculated value.  Uppercased
 "   custom command names.
@@ -73,7 +73,7 @@ function! SHA1CheckSum(...) range "{{{
 	"save the checksum in the variable b:md5sum, and optionally
 	"into the register specified by the user
 
-	if a:0 > 0 
+	if a:0 > 0
 		"if <line1> and <line2> were passed in from the command
 		let [f, l] = [a:2, a:3]
 	elseif a:firstline == a:lastline
@@ -163,7 +163,7 @@ function! MD5CheckSum(...) range "{{{
 "	call Dfunc('MD5CheckSum')
 "	call Decho(a:000)
 
-	if a:0 > 0 
+	if a:0 > 0
 "		call Decho("<line1> and <line2> were passed in from the command: " . a:0 . ', ' . a:1 . ', ' . a:2 . ', ' . a:3)
 		"if <line1> and <line2> were passed in from the command
 		let [f, l] = [a:2, a:3]
@@ -260,7 +260,7 @@ else
 	let s:MD5Prog = function('MD5_noprog')
 endif
 "}}}
-	
+
 "sha1 checksum {{{
 "sha1sum
 if executable('sha1sum')
@@ -275,10 +275,10 @@ endif
 "}}}
 
 
-"Mappings 
+"Mappings
 " MD5 {{{
 " clean up existing key mappings upon re-loading of script
-if hasmapto('<Plug>MD5Sum') 
+if hasmapto('<Plug>MD5Sum')
 	nunmap \md
 	vunmap \md
 	nunmap \mc
@@ -308,7 +308,7 @@ command! -nargs=? -range=% -register MD5C call MD5Compare("<reg>", "<line1>", "<
 
 "SHA1 {{{
 " clean up existing key mappings upon re-loading of script
-if hasmapto('<Plug>SHA1Sum') 
+if hasmapto('<Plug>SHA1Sum')
 	nunmap \sh
 	vunmap \sh
 	nunmap \sc

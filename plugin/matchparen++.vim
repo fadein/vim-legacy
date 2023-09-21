@@ -24,8 +24,8 @@
 "   finding a matching paren.  Borrowed from Bram's patch #7.1.269.
 "
 " 0.1.99 2007-11-05
-"   Using Bram's matchparen.vim plugin from standard distribution as starting point 
-"   for this version.  
+"   Using Bram's matchparen.vim plugin from standard distribution as starting point
+"   for this version.
 "
 "   Print line containing matching brace with echo instead of echomsg so as to
 "   not fill message history with non-message items.
@@ -178,7 +178,7 @@ function! s:Highlight_Matching_Pair() "{{{
 	if m_lnum < c_lnum && m_lnum > 0 && 'i' != mode()
 		" The matching paren is ABOVE cursor
 		let w:match_line_on = 1
-		
+
 		" Number of lines to scan backward looking for a statement
 		" which begins a block
 		if exists('g:MP_stmt_thresh')
@@ -189,7 +189,7 @@ function! s:Highlight_Matching_Pair() "{{{
 
 		let m_stmt = m_lnum
 		let i = 0
-		while getline(m_stmt) =~ '^\s*' . c . '\s*$\|^\s*$' 
+		while getline(m_stmt) =~ '^\s*' . c . '\s*$\|^\s*$'
 					\&& i <= s:stmt_thresh && m_stmt > 1
 			let i += 1
 			let m_stmt = m_lnum - i
@@ -223,7 +223,7 @@ function! s:TreatText(linenum) "{{{
 	let filler = '...'
 	let numlen = strlen(string(a:linenum)) + strlen(': ')
 	let to_fill = &columns - numlen
-	
+
 	" Account for space used by elements in the command-line to avoid
 	" 'Hit ENTER' prompts.
 	" If showcmd is on, it will take up 12 columns.
@@ -237,7 +237,7 @@ function! s:TreatText(linenum) "{{{
 			let to_fill -= 1
 		endif
 		if &ruler == 1
-			if (&laststatus == 0) || 
+			if (&laststatus == 0) ||
 						\(&laststatus == 1 && winnr('$') == 1)
 				if has('statusline')
 					if &rulerformat == ''
@@ -255,7 +255,7 @@ function! s:TreatText(linenum) "{{{
 
 	if strlen(text) > to_fill
 		let front = to_fill / 2 -1
-		let back  = front 
+		let back  = front
 		if to_fill % 2 == 0 | let back -= 1 | endif
 		let text = strpart(text, 0, front) . filler .
 					\strpart(text, strlen(text) - back)

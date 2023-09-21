@@ -1,5 +1,5 @@
 " Command Trim trims trailing whitespace from every line in a file
-if ! has('user_commands') && has('eval') 
+if ! has('user_commands') && has('eval')
     finish
 endif
 

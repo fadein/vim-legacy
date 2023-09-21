@@ -13,7 +13,7 @@ vnoremap Q  !$SHELL<CR>
 
 " {
 " echo True story: | figlet -f small -c
-"       cat <<-: | WIDTH=30 pms quote 
+"       cat <<-: | WIDTH=30 pms quote
 "               Use the Force, Harry!
 "               -- Gandalf
 "               :

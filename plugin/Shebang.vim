@@ -8,7 +8,7 @@ function! <SID>Shebang(command, ...)
 	let save_pos = getpos('.')
 
 	let path = system('which ' . a:command)
-	"path has a null char at the end of it, this 
+	"path has a null char at the end of it, this
 	"trims it off
 	let path = path[:-2]
 	if !v:shell_error

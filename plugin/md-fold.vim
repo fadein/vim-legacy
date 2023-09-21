@@ -17,7 +17,7 @@ function! MarkdownLevel()
     if getline(v:lnum) =~ '^###### .*$'
         return ">6"
     endif
-    return "=" 
+    return "="
 endfunction
 
 au BufEnter *.beat,*.ig,*.frag,*.md setlocal foldexpr=MarkdownLevel()

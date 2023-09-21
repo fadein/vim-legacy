@@ -1,5 +1,5 @@
 " Capitalize the first letter of each word on the current line
-if ! has('user_commands') && has('eval') 
+if ! has('user_commands') && has('eval')
     finish
 endif
 

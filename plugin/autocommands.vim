@@ -8,7 +8,7 @@ autocmd FileType markdown setlocal spell isfname-=#
 
 autocmd BufRead *.xsl,*.xslt,*.xml,*.htm,*.html,*.xsd,*.tas setlocal filetype=xml
 autocmd FileType xdefaults setlocal commentstring=!%s
-autocmd FileType {xml,xslt} setlocal iskeyword=$,@,-,\:,48-57,_,128-167,224-235 
+autocmd FileType {xml,xslt} setlocal iskeyword=$,@,-,\:,48-57,_,128-167,224-235
 autocmd FileType {xml,xslt} setlocal noexpandtab
 
 autocmd FileType {python} setlocal makeprg=pycodestyle\ --max-line-length=132\ %

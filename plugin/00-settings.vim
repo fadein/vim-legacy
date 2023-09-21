@@ -72,7 +72,7 @@ set wildmode=list:longest,full
 set wrap
 "endsettings
 
-"settings to fix dreaded un-indenting of lines beginning with # 
+"settings to fix dreaded un-indenting of lines beginning with #
 set autoindent
 inoremap # X#
 "set commentstring="#%s"

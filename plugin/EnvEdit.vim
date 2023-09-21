@@ -6,7 +6,7 @@
 "
 " Motivation:   Changing environment variables in Windows' "Environment
 "               Variables" dialog is just WAY too tedious.  This plugin
-"               provides the following benefits: 
+"               provides the following benefits:
 "                   1. Vim's editing keystrokes.
 "                   2. You can resize the window so that the entire value
 "                      fits on the screen.
@@ -57,7 +57,7 @@ command! -bang -nargs=+ -complete=environment EnvEdit call OpenEnvVar(<f-args>, 
 "}}}
 
 "OS-dependant malarky {{{
-if has("win32") 
+if has("win32")
     let s:pathsep = ';'
 else
     let s:pathsep = ':'
@@ -67,7 +67,7 @@ function! OpenEnvVar(var, ...) "{{{
     "make a new buffer if one doesn't already exist
     "else bring up the existing buffer
     let bufn = bufnr("\$" . a:var)
-    if -1 == bufn 
+    if -1 == bufn
         "buffer doesn't exist, create
         if a:1 == '!'
             exe 'edit! \$' . a:var
@@ -76,13 +76,13 @@ function! OpenEnvVar(var, ...) "{{{
         endif
 
         let b:EnvVarName = a:var
-        
+
         "see if there is a envVar
         if exists('$' . a:var)
             call ReadEnvVar(a:var)
         endif
-        setlocal buftype=acwrite bufhidden=hide nomodified 
-    elseif '' == getbufvar(bufn, 'EnvVarName') 
+        setlocal buftype=acwrite bufhidden=hide nomodified
+    elseif '' == getbufvar(bufn, 'EnvVarName')
         "buffer exists but doesn't appear to be used for an Env variable
         echoe "Buffer for " . a:var . " is a regular file"
         return
@@ -95,7 +95,7 @@ function! OpenEnvVar(var, ...) "{{{
         if a:1 == '!'
             normal 1GdG
             call ReadEnvVar(a:var)
-            setlocal nomodified 
+            setlocal nomodified
         endif
     endif
     au BufWriteCmd <buffer> call WriteEnvVar()

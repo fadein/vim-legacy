@@ -5,7 +5,7 @@
 " License:			If you copy this, just give me props.
 "
 " History:
-"   Version 0.1:	Initial version - creates a 
+"   Version 0.1:	Initial version - creates a
 
 if exists('loaded_scratch')
 	finish
@@ -41,7 +41,7 @@ function! s:CloseScratchWin() "{{{
 	if ( bufwinnr(s:sc_bufname) > 0)
 		"window exists and is visible, close it
 		let l:curWin = bufwinnr("%")
-		"switch to scratch buffer, 
+		"switch to scratch buffer,
 		execute bufwinnr(s:sc_bufname) . "wincmd W"
 		"close it,
 		execute bufwinnr(s:sc_bufname) . "wincmd c"
