@@ -18,6 +18,7 @@ set autowrite "writes file before I :make it
 set backspace=indent,eol,start "lets you use backspace on previously inserted words
 set nobackup
 set belloff=all
+set cdhome
 set nocindent
 set comments=s1:/*,mbx:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:- " is this right?
 set nocompatible
@@ -53,15 +54,19 @@ set shortmess=aoOTt
 set showcmd
 set smartcase
 set nosmartindent
+set smoothscroll
 set spellfile=$HOME/.vim/spell/local.en.add
+set spelloptions=camel
 set spellsuggest=best,5
 set splitbelow
+set splitkeep=screen
 set splitright
 set nostartofline
 set statusline=%m%f%a\ %y%r%w\ %=%l/%L\ %P
 set switchbuf=useopen
 set tabstop=4
 set tags=tags
+set tildeop
 set undodir=$HOME/.vim/undo
 set undofile
 set viminfo='100,<50,s10,h,n~/.vim/viminfo
