@@ -14,8 +14,8 @@ endif
 "sort this block with the following command:
 " .,/endsettings/-1sort /^"\?set\s\(no\)\?/
 set autoindent
-set autowrite "writes file before I :make it
-set backspace=indent,eol,start "lets you use backspace on previously inserted words
+set autowrite  "writes file before I :make it
+set backspace=indent,eol,start  "lets you use backspace on previously inserted words
 set nobackup
 set belloff=all
 set cdhome
@@ -66,7 +66,7 @@ set statusline=%m%f%a\ %y%r%w\ %=%l/%L\ %P
 set switchbuf=useopen
 set tabstop=4
 set tags=tags
-set tildeop
+set notildeop  " don't need this because g~ is already an operator
 set undodir=$HOME/.vim/undo
 set undofile
 set viminfo='100,<50,s10,h,n~/.vim/viminfo
