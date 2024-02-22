@@ -1,24 +1,19 @@
 function! MarkdownLevel()
-    if getline(v:lnum) =~ '^# .*$'
-        return ">1"
-    endif
+    " if getline(v:lnum) =~ '^# .*$'
+    "    return ">1"
     if getline(v:lnum) =~ '^## .*$'
         return ">2"
-    endif
-    if getline(v:lnum) =~ '^### .*$'
+    elseif getline(v:lnum) =~ '^### .*$'
         return ">3"
-    endif
-    if getline(v:lnum) =~ '^#### .*$'
+    elseif getline(v:lnum) =~ '^#### .*$'
         return ">4"
-    endif
-    if getline(v:lnum) =~ '^##### .*$'
+    elseif getline(v:lnum) =~ '^##### .*$'
         return ">5"
-    endif
-    if getline(v:lnum) =~ '^###### .*$'
+    elseif getline(v:lnum) =~ '^###### .*$'
         return ">6"
     endif
     return "="
 endfunction
 
-au BufEnter *.beat,*.ig,*.frag,*.md setlocal foldexpr=MarkdownLevel()
-au BufEnter *.beat,*.ig,*.frag,*.md setlocal foldmethod=expr
+au FileType markdown setlocal foldexpr=MarkdownLevel()
+au FileType markdown setlocal foldmethod=expr
