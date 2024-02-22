@@ -1,16 +1,16 @@
 function! MarkdownLevel()
-    " if getline(v:lnum) =~ '^# .*$'
-    "    return ">1"
-    if getline(v:lnum) =~ '^## .*$'
-        return ">2"
+    if getline(v:lnum) =~ '^# .*$'
+        return "0"
+    elseif getline(v:lnum) =~ '^## .*$'
+        return ">1"
     elseif getline(v:lnum) =~ '^### .*$'
-        return ">3"
+        return ">2"
     elseif getline(v:lnum) =~ '^#### .*$'
-        return ">4"
+        return ">3"
     elseif getline(v:lnum) =~ '^##### .*$'
-        return ">5"
+        return ">4"
     elseif getline(v:lnum) =~ '^###### .*$'
-        return ">6"
+        return ">5"
     endif
     return "="
 endfunction
