@@ -80,12 +80,15 @@ set wrap
 "settings to fix dreaded un-indenting of lines beginning with #
 set autoindent
 inoremap # X#
-"set commentstring="#%s"
 
 if has('syntax')
     syntax enable
     highlight Folded     term=standout ctermfg=12 ctermbg=None
     highlight CursorLine term=underline cterm=underline
+    if &t_Co >= 88
+        highlight Search    cterm=NONE ctermfg=0 ctermbg=119 guifg=Black guibg=Yellow
+        highlight IncSearch cterm=NONE ctermfg=0 ctermbg=119 guifg=Black guibg=Yellow
+    endif
 endif
 
 if has('eval')
