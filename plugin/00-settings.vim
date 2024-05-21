@@ -11,6 +11,15 @@ if !has('gui_running')
     set background=dark
 endif
 
+if !has('nvim')
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
+    set cscopetag
+    set viminfo='100,<50,s10,h,n~/.vim/viminfo
+else
+    set viminfo='100,<50,s10,h,n~/.local/share/nvim/viminfo
+endif
+
+
 "sort this block with the following command:
 " .,/endsettings/-1sort /^"\?set\s\(no\)\?/
 set autoindent
@@ -23,8 +32,6 @@ set nocindent
 set comments=s1:/*,mbx:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:- " is this right?
 set nocompatible
 set cpoptions=BadFAces
-set cscopequickfix=s-,c-,d-,i-,t-,e-
-set cscopetag
 set cursorline
 set directory^=~/.vim/swp//
 set expandtab
@@ -69,7 +76,6 @@ set tags=tags
 set notildeop  " don't need this because g~ is already an operator
 set undodir=$HOME/.vim/undo
 set undofile
-set viminfo='100,<50,s10,h,n~/.vim/viminfo
 set virtualedit=block
 set whichwrap=b,s,<,>,[,]
 set nowildmenu
