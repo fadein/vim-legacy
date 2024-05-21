@@ -15,6 +15,11 @@ if !has('nvim')
     set cscopequickfix=s-,c-,d-,i-,t-,e-
     set cscopetag
     set viminfo='100,<50,s10,h,n~/.vim/viminfo
+    if has('cursorshape') && &term =~ '\(rxvt-unicode\)\|\(xterm\)'
+        let &t_SI = "\e[6 q"
+        let &t_SR = "\e[4 q"
+        let &t_EI = "\e[2 q"
+    endif
 else
     set viminfo='100,<50,s10,h,n~/.local/share/nvim/viminfo
 endif
