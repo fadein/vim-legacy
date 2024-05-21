@@ -14,6 +14,7 @@ endif
 if !has('nvim')
     set cscopequickfix=s-,c-,d-,i-,t-,e-
     set cscopetag
+    set undodir=~/.vim/undo
     set viminfo='100,<50,s10,h,n~/.vim/viminfo
     if has('cursorshape') && &term =~ '\(rxvt-unicode\)\|\(xterm\)'
         let &t_SI = "\e[6 q"
@@ -22,6 +23,7 @@ if !has('nvim')
     endif
 else
     set viminfo='100,<50,s10,h,n~/.local/share/nvim/viminfo
+    set undodir=~/.local/share/nvim/undo
 endif
 
 
@@ -79,7 +81,6 @@ set switchbuf=useopen
 set tabstop=4
 set tags=tags
 set notildeop  " don't need this because g~ is already an operator
-set undodir=$HOME/.vim/undo
 set undofile
 set virtualedit=block
 set whichwrap=b,s,<,>,[,]
