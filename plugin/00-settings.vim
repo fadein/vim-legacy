@@ -81,6 +81,7 @@ set switchbuf=useopen
 set tabstop=4
 set tags=tags
 set notildeop  " don't need this because g~ is already an operator
+set title
 set undofile
 set virtualedit=block
 set whichwrap=b,s,<,>,[,]
