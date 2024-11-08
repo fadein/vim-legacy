@@ -15,6 +15,6 @@ command! -nargs=0 Taller    :let [s:lines, s:columns] = [&lines, &columns] |set 
 command! -nargs=0 Wider     :let [s:lines, s:columns] = [&lines, &columns] |set columns=999
 command! -nargs=0 Restore   :let [s:lines, s:columns, &lines, &columns] = [&lines, &columns, s:lines, s:columns]
 command! -nargs=0 Merge     /^\(<\|=\|>\)\{7}\ze\(\s\|$\)/
-command! -nargs=0 Quotes    :%s/’/'/g 
+command! -nargs=0 Quotes    :%s/’/'/ge | :%s/[“”]/"/ge
 
 " vim:filetype=vim sw=4 foldmethod=marker tw=78 expandtab:
