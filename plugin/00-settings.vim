@@ -58,7 +58,7 @@ set linebreak
 set matchpairs=(:),{:},[:],<:>
 set matchtime=3
 set modeline  "activate modelines
-set mouse=
+set mouse=a  " enable scroll wheel
 set nrformats=hex
 set number
 set ruler
