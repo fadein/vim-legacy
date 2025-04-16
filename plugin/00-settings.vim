@@ -28,7 +28,7 @@ endif
 
 
 "sort this block with the following command:
-" .,/endsettings/-1sort /^"\?set\s\(no\)\?/
+" +,/^$/-1sort /^"\?set\s\(no\)\?/
 set autoindent
 set autowrite  "writes file before I :make it
 set backspace=indent,eol,start  "lets you use backspace on previously inserted words
@@ -88,7 +88,6 @@ set whichwrap=b,s,<,>,[,]
 set nowildmenu
 set wildmode=list:longest,full
 set wrap
-"endsettings
 
 "settings to fix dreaded un-indenting of lines beginning with #
 set autoindent
