@@ -38,6 +38,7 @@ set cdhome
 set nocindent
 set comments=s1:/*,mbx:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:- " is this right?
 set nocompatible
+set completeopt=fuzzy,longest,menu,noselect
 set cpoptions=BadFAces
 set cursorline
 set directory^=~/.vim/swp//
