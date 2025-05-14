@@ -15,5 +15,9 @@ function! MarkdownLevel()
     return "="
 endfunction
 
-au FileType markdown setlocal foldexpr=MarkdownLevel()
-au FileType markdown setlocal foldmethod=expr
+augroup markdown-fold
+    autocmd!
+    autocmd FileType markdown setlocal foldmethod=expr
+    autocmd FileType markdown setlocal foldexpr=MarkdownLevel()
+    autocmd FileType markdown setlocal foldenable
+augroup END
