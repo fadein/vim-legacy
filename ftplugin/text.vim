@@ -17,7 +17,7 @@ let b:undo_ftplugin = 'setlocal comments< commentstring<'
 setlocal comments=fb:-,fb:*,n:>
 setlocal commentstring=
 
-augroup vimrcEx
+augroup text_ftplugin
     autocmd!
     autocmd FileType text setlocal textwidth=0
 augroup END
