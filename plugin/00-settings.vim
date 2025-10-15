@@ -70,6 +70,7 @@ set showcmd
 set smartcase
 set nosmartindent
 set smoothscroll
+set spellcapcheck=  "don't highlight first un-capitalized word in a sentence
 set spellfile=$HOME/.vim/spell/local.en.add
 set spelloptions=camel
 set spellsuggest=best,5
