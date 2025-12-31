@@ -89,6 +89,7 @@ set virtualedit=block
 set whichwrap=b,s,<,>,[,]
 set nowildmenu
 set wildmode=list:longest,full
+set wildignorecase
 set wrap
 
 "settings to fix dreaded un-indenting of lines beginning with #
