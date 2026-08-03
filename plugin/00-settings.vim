@@ -21,6 +21,12 @@ if !has('nvim')
         let &t_SR = "\e[4 q"
         let &t_EI = "\e[2 q"
     endif
+
+    if has('cursorshape') && &term =~ 'linux'
+        let &t_SI = "\e[?17;0;64c"
+        let &t_SR = "\e[?17;0;64c"
+        let &t_EI = "\e[?17;0;64c"
+    endif
 else
     set viminfo='100,<50,s10,h,n~/.local/share/nvim/viminfo
     set undodir=~/.local/share/nvim/undo
